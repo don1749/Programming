@@ -1,0 +1,1 @@
+clang++ -o code.cpp -lm
