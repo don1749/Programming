@@ -1,1 +1,1 @@
-clang++ -o code.cpp -lm
+g++-12 -o exe code.cpp

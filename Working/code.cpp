@@ -59,24 +59,5 @@ typedef unsigned long long int  uint64;
 
 /* Main()  function */
 int main() {
-    ll mod = 998244353;
-    ll S = 1;
-    ll base10 = 0;
     
-    int Q; cin >> Q;
-
-    while (Q--) {
-        string q; cin >> q;
-        if (q[0]=='1') {
-            ll x = (ll)(q[2]-'0');
-            S = S*10 + x;
-            base10 ++;
-        } else if (q[0]=='2') { 
-            S = S - (ll)(S/base10);
-        } else {
-            cout << S % mod << endl;
-        }
-    }
-
-    return 0;
 }
