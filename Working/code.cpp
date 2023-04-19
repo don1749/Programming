@@ -57,19 +57,19 @@ void print_queue(std::string_view name, Q q)
 #define PI 3.1415926535897932384626433832795
 #define MAX_N 100005
 #define INF 1e9
-// #define read(type) readInt<type>()
+#define read(type) readInt<type>()
 
-// ll min(ll a,int b) { if (a<b) return a; return b; }
-// ll min(int a,ll b) { if (a<b) return a; return b; }
-// ll max(ll a,int b) { if (a>b) return a; return b; }
-// ll max(int a,ll b) { if (a>b) return a; return b; }
-// ll gcd(ll a,ll b) { if (b==0) return a; return gcd(b, a%b); }
-// ll lcm(ll a,ll b) { return a/gcd(a,b)*b; }
-// string to_upper(string a) { for (int i=0;i<(int)a.size();++i) if (a[i]>='a' && a[i]<='z') a[i]-='a'-'A'; return a; }
-// string to_lower(string a) { for (int i=0;i<(int)a.size();++i) if (a[i]>='A' && a[i]<='Z') a[i]+='a'-'A'; return a; }
-// bool prime(ll a) { if (a==1) return 0; for (int i=2;i<=round(sqrt(a));++i) if (a%i==0) return 0; return 1; }
-// void yes() { cout<<"YES\n"; }
-// void no() { cout<<"NO\n"; }
+ll min(ll a,int b) { if (a<b) return a; return b; }
+ll min(int a,ll b) { if (a<b) return a; return b; }
+ll max(ll a,int b) { if (a>b) return a; return b; }
+ll max(int a,ll b) { if (a>b) return a; return b; }
+ll gcd(ll a,ll b) { if (b==0) return a; return gcd(b, a%b); }
+ll lcm(ll a,ll b) { return a/gcd(a,b)*b; }
+string to_upper(string a) { for (int i=0;i<(int)a.size();++i) if (a[i]>='a' && a[i]<='z') a[i]-='a'-'A'; return a; }
+string to_lower(string a) { for (int i=0;i<(int)a.size();++i) if (a[i]>='A' && a[i]<='Z') a[i]+='a'-'A'; return a; }
+bool prime(ll a) { if (a==1) return 0; for (int i=2;i<=round(sqrt(a));++i) if (a%i==0) return 0; return 1; }
+void yes() { cout<<"YES\n"; }
+void no() { cout<<"NO\n"; }
 
 /*  All Required define Pre-Processors and typedef Constants */
 typedef long int int32;
@@ -110,21 +110,7 @@ struct UnionFind {
 int main() {
     std::cin.tie(0)->sync_with_stdio(0);
 
-    int n; cin >> n;
-    vi arr;
-    f(i,0,n) {
-        int x; cin >> x;
-        arr.push_back(x);
-    }
-
-    vi dp(n);
-    dp[0]=arr[0]; dp[1] = max(dp[0], arr[1]);
-
-    f(i,2,n) {
-        dp[i] = max(dp[i-2]+arr[i], max(dp[i-2], dp[i-1]));
-        // cout << dp[i] << ' ';
-    }
-    cout << max(dp[n-1], dp[n-2]) << endl;
+    
 
     return 0;
 }
