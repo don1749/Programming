@@ -110,21 +110,17 @@ struct UnionFind {
 int main() {
     std::cin.tie(0)->sync_with_stdio(0);
 
-    int n; cin >> n;
-    vi arr;
-    f(i,0,n) {
-        int x; cin >> x;
-        arr.push_back(x);
+    int N, M; cin >> N >> M;
+    int cycleCount = 0;
+    UnionFind graph(N);
+    f(i,0,M) {
+        int A, C; char B, D;
+        cin >> A >> B >> C >> D;
+        A--; C--;
+        if(graph.same(A,C)) cycleCount++;
+        else graph.unite(A,C);
     }
 
-    vi dp(n);
-    dp[0]=arr[0]; dp[1] = max(dp[0], arr[1]);
-
-    f(i,2,n) {
-        dp[i] = max(dp[i-2]+arr[i], max(dp[i-2], dp[i-1]));
-        // cout << dp[i] << ' ';
-    }
-    cout << max(dp[n-1], dp[n-2]) << endl;
-
+    cout << cycleCount << ' ' << N-M << endl;
     return 0;
 }
